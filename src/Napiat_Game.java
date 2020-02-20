@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
-//To play NAPIAT 2020, press the run button below!
+//To play NAPIAT 2600, press the run button below!
 public class Napiat_Game {
     //Galaxy Variables:
     public static int subGal;
