@@ -164,7 +164,7 @@ public class Napiat_Game {
                 System.out.println("\nWould you like to buy a new gun for " + (coins / 4 + 1) + " coins?");
                 buyGun();
             }
-            if (robbery == 0 && year != 2600) {
+            if (robbery == 0 && year != 2600 && coins >= 400) {
                 System.out.println("\n**************************************************************************************");
                 System.out.println("*YOU HAVE BEEN BEATEN UP AND ROBBED!                                                  *");
                 System.out.println("*The thieves have taken " + ((coins * 3) / 4) + " coins!                                      *");
