@@ -2114,6 +2114,7 @@ public class Napiat_Game {
             level = 11;
         }
         System.out.println("RANK: " + rank);
+        System.out.println("\nWhat would you like to do?");
     }
 
     private static void playAgain() {
@@ -2145,6 +2146,7 @@ public class Napiat_Game {
         System.out.println("Uranium: " + uraniumPrice);
         System.out.println("Produce: " + producePrice);
         System.out.println("Water: " + waterPrice);
+        System.out.println("\nWhat would you like to do?");
     }
 
     private static void map() {
@@ -2154,6 +2156,7 @@ public class Napiat_Game {
         System.out.println("   ....   (6)  ....    ");
         System.out.println();
         System.out.println("          (7)          ");
+        System.out.println("\nWhat would you like to do?");
     }
 
     private static void commands() {
@@ -2171,6 +2174,7 @@ public class Napiat_Game {
         System.out.println("     map or m - (look at a map of the universe)");
         System.out.println("     retire - (end game with ranking)");
         System.out.println("     commands or c (look at a list of keywords)");
+        System.out.println("\nWhat would you like to do?");
     }
 
     //Bank methods:
