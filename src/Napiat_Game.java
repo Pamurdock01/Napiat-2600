@@ -93,21 +93,16 @@ public class Napiat_Game {
         System.out.println("     bye - (end game)");
         System.out.println("     galaxy1/galaxy2/galaxy3/galaxy4/galaxy5/galaxy6/galaxy7 - (travel)");
         System.out.println("     g1/g2/g3/g4/g5/g6/g7 - (travel)");
-        System.out.println("     sell - (sell cargo)");
-        System.out.println("     buy - (buy cargo)");
+        System.out.println("     sell or s - (sell cargo)");
+        System.out.println("     buy or b - (buy cargo)");
         System.out.println("     warehouse - (add/remove from storage)");
         System.out.println("     bank - (deposit/withdraw from bank)");
         System.out.println("     prices - (show current galaxy prices)");
-        System.out.println("     leave - (leave the warehouse or the bank)");
-        System.out.println("     stats - (statistics)");
+        System.out.println("     leave or l - (leave the warehouse or the bank)");
+        System.out.println("     stats or stat - (statistics)");
+        System.out.println("     map or m - (look at a map of the universe)");
         System.out.println("     retire - (end game with ranking)");
-        System.out.println("\nHere is a map of the galaxies and asteroid belts: ");
-        System.out.println("\n          (1)          ");
-        System.out.println("     (2)       (3)     ");
-        System.out.println("(5)  ..............  (4)");
-        System.out.println("   ....   (6)  ....    ");
-        System.out.println();
-        System.out.println("          (7)          ");
+        System.out.println("     commands or c - (look at a list of keywords)");
         System.out.println("\n----------------------------------------------------------");
         System.out.println("\nWould you like to begin the game with 'money' or 'guns'?");
         boolean finished = false;
@@ -389,6 +384,19 @@ public class Napiat_Game {
                     int g = coins / 2;
                     coins -= g;
                 }
+            } else if (input.contains("map") || input.contains("m")) {
+                System.out.println("\nHere is the map Captain:");
+                map();
+            } else if (input.contains("commands") || input.contains("command") || input.contains("c")) {
+                commands();
+            } else if (input.contains("g4") || input.contains("galaxy 4")) {
+                System.out.println("\nThere is not a direct path to galaxy 4. Why don't you check the map.");
+            } else if (input.contains("g5") || input.contains("galaxy 5")) {
+                System.out.println("\nThere is not a direct path to galaxy 5. Why don't you check the map.");
+            } else if (input.contains("g6") || input.contains("galaxy 6")) {
+                System.out.println("\nThere is not a direct path to galaxy 6. Why don't you check the map.");
+            } else if (input.contains("g7") || input.contains("galaxy 7")) {
+                System.out.println("\nThere is not a direct path to galaxy 7. Why don't you check the map.");
             } else {
                 String response = responder.generateResponse(input);
                 System.out.println(response);
@@ -748,6 +756,17 @@ public class Napiat_Game {
                 System.out.println("\nEnjoy retirement!");
                 finished = true;
                 stats();
+            } else if (input.contains("g4") || input.contains("galaxy 4")) {
+                System.out.println("\nThere is not a direct path to galaxy 4. Why don't you check the map.");
+            } else if (input.contains("g6") || input.contains("galaxy 6")) {
+                System.out.println("\nThere is not a direct path to galaxy 6. Why don't you check the map.");
+            } else if (input.contains("g7") || input.contains("galaxy 7")) {
+                System.out.println("\nThere is not a direct path to galaxy 7. Why don't you check the map.");
+            } else if (input.contains("map") || input.contains("m")) {
+                System.out.println("\nHere is the map Captain:");
+                map();
+            } else if (input.contains("commands") || input.contains("command") || input.contains("c")) {
+                commands();
             } else {
                 String response = responder.generateResponse(input);
                 System.out.println(response);
@@ -1008,6 +1027,17 @@ public class Napiat_Game {
                 System.out.println("\nEnjoy retirement!");
                 finished = true;
                 stats();
+            } else if (input.contains("g5") || input.contains("galaxy 5")) {
+                System.out.println("\nThere is not a direct path to galaxy 5. Why don't you check the map.");
+            } else if (input.contains("g6") || input.contains("galaxy 6")) {
+                System.out.println("\nThere is not a direct path to galaxy 6. Why don't you check the map.");
+            } else if (input.contains("g7") || input.contains("galaxy 7")) {
+                System.out.println("\nThere is not a direct path to galaxy 7. Why don't you check the map.");
+            } else if (input.contains("commands") || input.contains("command") || input.contains("c")) {
+                commands();
+            } else if (input.contains("map") || input.contains("m")) {
+                System.out.println("\nHere is the map Captain:");
+                map();
             } else {
                 String response = responder.generateResponse(input);
                 System.out.println(response);
@@ -1026,7 +1056,7 @@ public class Napiat_Game {
             if (input.contains("bye")) {
                 finished = true;
                 System.out.println("\nYou have been dishonorably discharged from your duties----GAME OVER");
-            } else if (input.contains("yes")) {
+            } else if (input.contains("yes") || input.contains("y")) {
                 if (coins >= hold * 1000 * level) {
                     coins -= hold * 1000 * level;
                     if (shipShape > 64) {
@@ -1043,7 +1073,7 @@ public class Napiat_Game {
                     System.out.println("Come back with more gold");
                     System.out.println("\nYou may travel to Galaxy 3 or Galaxy 6.  You may also check the 'map'");
                 }
-            } else if (input.contains("no")) {
+            } else if (input.contains("no") || input.contains("n")) {
                 System.out.println("\nWhy would you come to Galaxy 4 if you are not in need of repairs?");
                 System.out.println("Your activities here are suspicious");
                 System.out.println("You have been fined " + coins / 3 + " coins");
@@ -1053,7 +1083,8 @@ public class Napiat_Game {
                 System.out.println("\nThere is not a direct route to Galaxy 2");
             } else if (input.contains("galaxy1") || input.contains("g1")) {
                 System.out.println("\nThere is not a direct route to Galaxy 1");
-            } else if (input.contains("map")) {
+            } else if (input.contains("map") || input.contains("m")) {
+                System.out.println("\nHere is the map Captain:");
                 map();
             } else if (input.contains("galaxy3") || input.contains("g3")) {
                 System.out.print("\n\u000C");
@@ -1262,6 +1293,8 @@ public class Napiat_Game {
                 galaxy6();
             } else if (input.contains("stats") || input.contains("stat")) {
                 stats();
+            } else if (input.contains("commands") || input.contains("command") || input.contains("c")) {
+                commands();
             } else if (input.contains("retire")) {
                 System.out.println("\nYou cannot retire in deep space.  You must make it back to an inner galaxy (1, 2, or 3)");
             } else {
@@ -1296,7 +1329,8 @@ public class Napiat_Game {
             if (input.contains("bye")) {
                 finished = true;
                 System.out.println("\nYou have been dishonorably discharged from your duties----GAME OVER");
-            } else if (input.contains("map")) {
+            } else if (input.contains("map") || input.contains("m")) {
+                System.out.println("\nHere is the map Captain:");
                 map();
             } else if (input.contains("galaxy2") || input.contains("g2")) {
                 System.out.print("\n\u000C");
@@ -1382,11 +1416,11 @@ public class Napiat_Game {
                     galaxy2();
                 }
             } else if (input.contains("galaxy3") || input.contains("g3")) {
-                System.out.println("\nThere is not a direct route to Galaxy 3");
+                System.out.println("\nThere is not a direct route to Galaxy 3. Why don't you check the map.");
             } else if (input.contains("galaxy1") || input.contains("g1")) {
-                System.out.println("\nThere is not a direct route to Galaxy 1");
+                System.out.println("\nThere is not a direct route to Galaxy 1. Why don't you check the map.");
             } else if (input.contains("galaxy4") || input.contains("g4")) {
-                System.out.println("\nThere is not a direct route to Galaxy 4");
+                System.out.println("\nThere is not a direct route to Galaxy 4. Why don't you check the map.");
             } else if (input.contains("galaxy6") || input.contains("g6")) {
                 System.out.print("\n\u000C");
                 finished = true;
@@ -1520,6 +1554,8 @@ public class Napiat_Game {
                 prices();
             } else if (input.contains("retire")) {
                 System.out.println("\nYou cannot retire in deep space.  You must make it back to an inner galaxy (1, 2, or 3)");
+            } else if (input.contains("commands") || input.contains("command") || input.contains("c")) {
+                commands();
             } else {
                 String response = responder.generateResponse(input);
                 System.out.println(response);
@@ -1561,14 +1597,14 @@ public class Napiat_Game {
             if (input.contains("bye")) {
                 finished = true;
                 System.out.println("\nYou have been dishonorably discharged from your duties----GAME OVER");
-            } else if (input.contains("map")) {
+            } else if (input.contains("map") || input.contains("m")) {
                 map();
             } else if (input.contains("galaxy2") || input.contains("g2")) {
-                System.out.println("\nThere is not a direct route to Galaxy 2");
+                System.out.println("\nThere is not a direct route to Galaxy 2. Why don't you check the map.");
             } else if (input.contains("galaxy1") || input.contains("g1")) {
-                System.out.println("\nThere is not a direct route to Galaxy 1");
+                System.out.println("\nThere is not a direct route to Galaxy 1. Why don't you check the map.");
             } else if (input.contains("galaxy3") || input.contains("g3")) {
-                System.out.println("\nThere is not a direct route to Galaxy 2");
+                System.out.println("\nThere is not a direct route to Galaxy 2. Why don't you check the map.");
             } else if (input.contains("galaxy7") || input.contains("g7")) {
                 finished = true;
                 year += 1;
@@ -1873,8 +1909,13 @@ public class Napiat_Game {
                 }
             } else if (input.contains("stats") || input.contains("stat")) {
                 stats();
+            } else if (input.contains("commands") || input.contains("command") || input.contains("c")) {
+                commands();
             } else if (input.contains("retire")) {
                 System.out.println("\nYou cannot retire in deep space.  You must make it back to an inner galaxy (1, 2, or 3)");
+            } else {
+                String response = responder.generateResponse(input);
+                System.out.println(response);
             }
         }
     }
@@ -1918,15 +1959,15 @@ public class Napiat_Game {
                 finished = true;
                 System.out.println("\nYou have been dishonorably discharged from your duties----GAME OVER");
             } else if (input.contains("galaxy2") || input.contains("g2")) {
-                System.out.println("\nThere is not a direct route to Galaxy 2");
+                System.out.println("\nThere is not a direct route to Galaxy 2. Why don't you check the map. ");
             } else if (input.contains("galaxy3") || input.contains("g3")) {
-                System.out.println("\nThere is not a direct route to Galaxy 3");
+                System.out.println("\nThere is not a direct route to Galaxy 3. Why don't you check the map.");
             } else if (input.contains("galaxy1") || input.contains("g1")) {
-                System.out.println("\nThere is not a direct route to Galaxy 1");
+                System.out.println("\nThere is not a direct route to Galaxy 1. Why don't you check the map.");
             } else if (input.contains("galaxy5") || input.contains("g5")) {
-                System.out.println("\nThere is not a direct route to Galaxy 5");
+                System.out.println("\nThere is not a direct route to Galaxy 5. Why don't you check the map.");
             } else if (input.contains("galaxy4") || input.contains("g4")) {
-                System.out.println("\nThere is not a direct route to Galaxy 4");
+                System.out.println("\nThere is not a direct route to Galaxy 4. Why don't you check the map.");
             } else if (input.contains("galaxy6") || input.contains("g6")) {
                 finished = true;
                 subGal = 1;
@@ -1945,7 +1986,11 @@ public class Napiat_Game {
                 prices();
             } else if (input.contains("retire")) {
                 System.out.println("\nYou cannot retire in deep space.  You must make it back to an inner galaxy (1, 2, or 3)");
-
+            } else if (input.contains("map") || input.contains("m")) {
+                System.out.println("\nHere is the map Captain:");
+                map();
+            } else if (input.contains("commands") || input.contains("command") || input.contains("c")) {
+                commands();
             } else {
                 String response = responder.generateResponse(input);
                 System.out.println(response);
@@ -1961,7 +2006,7 @@ public class Napiat_Game {
             if (input.contains("bye")) {
                 finished = true;
                 System.out.println("\nYou have been dishonorably discharged from your duties----GAME OVER");
-            } else if (input.contains("yes")) {
+            } else if (input.contains("yes") || input.contains("y")) {
                 if (coins == 0) {
                     System.out.println("\nSorry, you have no coins");
                     finished = true;
@@ -1995,7 +2040,7 @@ public class Napiat_Game {
         boolean finished = false;
         while (!finished) {
             HashSet input = reader.getInput();
-            if (input.contains("yes")) {
+            if (input.contains("yes") || input.contains("y")) {
                 if (coins < 1) {
                     System.out.println("\nSorry, you don't have enough coins");
                     finished = true;
@@ -2078,11 +2123,11 @@ public class Napiat_Game {
             if (input.contains("bye")) {
                 finished = true;
                 System.out.println("\nYou have been dishonorably discharged from your duties----GAME OVER");
-            } else if (input.contains("no")) {
+            } else if (input.contains("no") || input.contains("n")) {
                 System.out.println("\nGoodbye");
                 System.out.print("\u000C");
                 finished = true;
-            } else if (input.contains("yes")) {
+            } else if (input.contains("yes") || input.contains("y")) {
                 System.out.print("\u000C");
                 finished = true;
                 String[] args = new String[0];
@@ -2111,6 +2156,23 @@ public class Napiat_Game {
         System.out.println("          (7)          ");
     }
 
+    private static void commands() {
+        System.out.println("\nHere is a list of keywords:");
+        System.out.println("     bye - (end game)");
+        System.out.println("     galaxy1/galaxy2/galaxy3/galaxy4/galaxy5/galaxy6/galaxy7 - (travel)");
+        System.out.println("     g1/g2/g3/g4/g5/g6/g7 - (travel)");
+        System.out.println("     sell or s - (sell cargo)");
+        System.out.println("     buy or b - (buy cargo)");
+        System.out.println("     warehouse - (add/remove from storage)");
+        System.out.println("     bank - (deposit/withdraw from bank)");
+        System.out.println("     prices - (show current galaxy prices)");
+        System.out.println("     leave or l - (leave the warehouse or the bank)");
+        System.out.println("     stats or stat - (statistics)");
+        System.out.println("     map or m - (look at a map of the universe)");
+        System.out.println("     retire - (end game with ranking)");
+        System.out.println("     commands or c (look at a list of keywords)");
+    }
+
     //Bank methods:
     private static void bank() {
         int robbed = rand.nextInt(12);
@@ -2131,7 +2193,7 @@ public class Napiat_Game {
             if (input.contains("bye")) {
                 finished = true;
                 System.out.println("\nYou have been dishonorably discharged from your duties----GAME OVER");
-            } else if (input.contains("deposit")) {
+            } else if (input.contains("deposit") || input.contains("d")) {
                 if (coins < 1) {
                     System.out.println("\nYou do not have any coins to deposit.");
                     finished = true;
@@ -2142,7 +2204,7 @@ public class Napiat_Game {
                     System.out.println("\nHow much would you like to deposit?");
                     depositCoins();
                 }
-            } else if (input.contains("withdraw")) {
+            } else if (input.contains("withdraw") || input.contains("w")) {
                 if (bankTotal < 1) {
                     System.out.println("\nYou do not have any coins to withdraw.");
                     finished = true;
@@ -2153,7 +2215,7 @@ public class Napiat_Game {
                     System.out.println("\nHow much would you like to withdraw?");
                     withdrawCoins();
                 }
-            } else if (input.contains("leave")) {
+            } else if (input.contains("leave") || input.contains("l")) {
                 finished = true;
                 System.out.println("\nLeaving the bank");
                 subGal = 1;
@@ -2247,10 +2309,10 @@ public class Napiat_Game {
                     finished = true;
                     wareHouseAdd();
 
-                } else if (input.contains("remove")) {
+                } else if (input.contains("remove") || input.contains("r")) {
                     finished = true;
                     wareHouseRemove();
-                } else if (input.contains("leave")) {
+                } else if (input.contains("leave") || input.contains("l")) {
                     finished = true;
                     System.out.println("\nLeaving the warehouse");
                     subGal = 1;
@@ -2304,7 +2366,7 @@ public class Napiat_Game {
                     System.out.println("\nHow many units?");
                     addWater();
                 }
-            } else if (input.contains("leave")) {
+            } else if (input.contains("leave") || input.contains("l")) {
                 finished = true;
                 System.out.println("\nLeaving the warehouse");
                 subGal = 1;
@@ -2444,7 +2506,7 @@ public class Napiat_Game {
                     System.out.println("\nHow many units?");
                     removeWater();
                 }
-            } else if (input.contains("leave")) {
+            } else if (input.contains("leave") || input.contains("l")) {
                 finished = true;
                 System.out.println("\nLeaving the warehouse");
                 subGal = 1;
@@ -2620,9 +2682,9 @@ public class Napiat_Game {
                     System.out.println("\nHow many units?");
                     buyWater();
                 }
-            } else if (input.contains("prices")) {
+            } else if (input.contains("prices") || input.contains("price")) {
                 prices();
-            } else if (input.contains("nothing")) {
+            } else if (input.contains("nothing") || input.contains("n")) {
                 subGal = 1;
                 if (gal == 1) {
                     galaxy1();
@@ -2921,9 +2983,9 @@ public class Napiat_Game {
                     System.out.println("\nHow many units would you like to sell?");
                     sellWater();
                 }
-            } else if (input.contains("prices")) {
+            } else if (input.contains("prices") || input.contains("price")) {
                 prices();
-            } else if (input.contains("nothing")) {
+            } else if (input.contains("nothing") || input.contains("n")) {
                 subGal = 1;
                 if (gal == 1) {
                     galaxy1();
