@@ -1,2 +1,4 @@
 # Napiat-2600
-Fun java game where you command an military intergalactic cargo ship and seek to become a 4 star general!
+Fun java game where you are in command an military intergalactic cargo ship in the year 2600 and hope to become a 4 star Napiat general!
+
+To play the game, click on the Napiat_Game class and run the main method!
