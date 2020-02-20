@@ -1,13 +1,11 @@
-package Napiat_2600;
-
 import java.awt.*;
 import java.util.HashSet;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
-//To play NAPIAT 2600, press the run button below!
-public class Napiat {
+//To play NAPIAT 2020, press the run button below!
+public class Napiat_Game {
     //Galaxy Variables:
     public static int subGal;
     public static int gal;

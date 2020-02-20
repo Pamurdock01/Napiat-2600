@@ -1,5 +1,3 @@
-package Napiat_2600;
-
 import java.util.*;
 
 /**
