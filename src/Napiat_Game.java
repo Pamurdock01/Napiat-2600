@@ -7,43 +7,43 @@ import java.util.Scanner;
 //To play NAPIAT 2600, press the run button below!
 public class Napiat_Game {
     //Galaxy Variables:
-    public static int subGal;
-    public static int gal;
-    public static int uraniumPrice;
-    public static int producePrice;
-    public static int waterPrice;
-    public static int uraniumBase;
-    public static int produceBase;
-    public static int waterBase;
-    public static int year;
-    public static int pirateShip;
-    public static int booty;
-    public static int asteroids;
+    private static int subGal;
+    private static int gal;
+    private static int uraniumPrice;
+    private static int producePrice;
+    private static int waterPrice;
+    private static int uraniumBase;
+    private static int produceBase;
+    private static int waterBase;
+    private static int year;
+    private static int pirateShip;
+    private static int booty;
+    private static int asteroids;
 
     //Game Variables:
-    public static InputReader reader;
-    public static Responder responder;
-    public static Random rand;
+    private static InputReader reader;
+    private static Responder responder;
+    private static Random rand;
 
     //Ship Variables:
-    public static int coins;
-    public static int guns;
-    public static int greed;
-    public static int hold;
-    public static int uranium;
-    public static int produce;
-    public static int water;
-    public static int shipShape;
-    public static String rank;
-    public static int level;
-    public static int damage;
+    private static int coins;
+    private static int guns;
+    private static int greed;
+    private static int hold;
+    private static int uranium;
+    private static int produce;
+    private static int water;
+    private static int shipShape;
+    private static String rank;
+    private static int level;
+    private static int damage;
 
     //Warehouse and bank Variables:
-    public static int wareHouseTotal;
-    public static int wareHouseUranium;
-    public static int wareHouseProduce;
-    public static int wareHouseWater;
-    public static int bankTotal;
+    private static int wareHouseTotal;
+    private static int wareHouseUranium;
+    private static int wareHouseProduce;
+    private static int wareHouseWater;
+    private static int bankTotal;
 
     public static void main(String[] args) {
         reader = new InputReader();
@@ -164,7 +164,7 @@ public class Napiat_Game {
                 System.out.println("\nWould you like to buy a new gun for " + (coins / 4 + 1) + " coins?");
                 buyGun();
             }
-            if (robbery == 0) {
+            if (robbery == 0 && year != 2600) {
                 System.out.println("\n**************************************************************************************");
                 System.out.println("*YOU HAVE BEEN BEATEN UP AND ROBBED!                                                  *");
                 System.out.println("*The thieves have taken " + ((coins * 3) / 4) + " coins!                                      *");
