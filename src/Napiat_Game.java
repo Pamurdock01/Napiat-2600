@@ -37,6 +37,7 @@ public class Napiat_Game {
     private static String rank;
     private static int level;
     private static int damage;
+    private static int retire;
 
     //Warehouse and bank Variables:
     private static int wareHouseTotal;
@@ -77,6 +78,7 @@ public class Napiat_Game {
         level = 1;
         damage = 0;
         asteroids = 0;
+        retire = 0;
 
         System.out.println("Napiat!");
         System.out.println("Welcome to galaxy 1, Napiat");
@@ -262,6 +264,7 @@ public class Napiat_Game {
                         System.out.println("*Your ship has been sunk....GAME OVER                                                *");
                         System.out.println("**************************************************************************************");
                         finished = true;
+                        retire = 1;
                         stats();
                         System.out.println("\nWould you like to play again?");
                         playAgain();
@@ -344,6 +347,7 @@ public class Napiat_Game {
                         System.out.println("*Your ship has been sunk....GAME OVER                                                *");
                         System.out.println("**************************************************************************************");
                         finished = true;
+                        retire = 1;
                         stats();
                         System.out.println("\nWould you like to play again?");
                         playAgain();
@@ -373,6 +377,7 @@ public class Napiat_Game {
             } else if (input.contains("retire")) {
                 System.out.println("\nEnjoy retirement!");
                 finished = true;
+                retire = 1;
                 stats();
             } else if (input.contains("easter") || input.contains("egg")) {
                 greed++;
@@ -544,6 +549,7 @@ public class Napiat_Game {
                         System.out.println("*Your ship has been sunk....GAME OVER                                                *");
                         System.out.println("**************************************************************************************");
                         finished = true;
+                        retire = 1;
                         stats();
                         System.out.println("\nWould you like to play again?");
                         playAgain();
@@ -634,6 +640,7 @@ public class Napiat_Game {
                         System.out.println("*Your ship has been sunk....GAME OVER                                                *");
                         System.out.println("**************************************************************************************");
                         finished = true;
+                        retire = 1;
                         stats();
                         System.out.println("\nWould you like to play again?");
                         playAgain();
@@ -724,6 +731,7 @@ public class Napiat_Game {
                         System.out.println("*Your ship has been sunk....GAME OVER                                                *");
                         System.out.println("**************************************************************************************");
                         finished = true;
+                        retire = 1;
                         stats();
                         System.out.println("\nWould you like to play again?");
                         playAgain();
@@ -755,6 +763,7 @@ public class Napiat_Game {
             } else if (input.contains("retire")) {
                 System.out.println("\nEnjoy retirement!");
                 finished = true;
+                retire = 1;
                 stats();
             } else if (input.contains("g4") || input.contains("galaxy 4")) {
                 System.out.println("\nThere is not a direct path to galaxy 4. Why don't you check the map.");
@@ -915,6 +924,7 @@ public class Napiat_Game {
                         System.out.println("*Your ship has been sunk....GAME OVER                                                *");
                         System.out.println("**************************************************************************************");
                         finished = true;
+                        retire = 1;
                         stats();
                         System.out.println("\nWould you like to play again?");
                         playAgain();
@@ -997,6 +1007,7 @@ public class Napiat_Game {
                         System.out.println("*Your ship has been sunk....GAME OVER                                                *");
                         System.out.println("**************************************************************************************");
                         finished = true;
+                        retire = 1;
                         stats();
                         System.out.println("\nWould you like to play again?");
                         playAgain();
@@ -1026,6 +1037,7 @@ public class Napiat_Game {
             } else if (input.contains("retire")) {
                 System.out.println("\nEnjoy retirement!");
                 finished = true;
+                retire = 1;
                 stats();
             } else if (input.contains("g5") || input.contains("galaxy 5")) {
                 System.out.println("\nThere is not a direct path to galaxy 5. Why don't you check the map.");
@@ -1127,7 +1139,6 @@ public class Napiat_Game {
                     if (shipShape < 1 && pirateShip < 1) {
                         System.out.println("\n*You won the battle...barely.                                                        *");
                         System.out.println("**************************************************************************************");
-                        System.out.println();
                         shipShape = 2;
                         galaxy3();
                     } else if (pirateShip < 1) {
@@ -1151,7 +1162,6 @@ public class Napiat_Game {
                         }
                         System.out.println("\n*You have gained " + booty + " coins.                                                    ");
                         System.out.println("**************************************************************************************");
-                        System.out.println();
                         galaxy3();
                     } else {
                         System.out.println("\n*You have lost the battle.                                                           *");
@@ -1159,10 +1169,9 @@ public class Napiat_Game {
                         System.out.println("\n*The pirates have taken all your coins.                                              *");
                         System.out.println("*Your ship has been sunk....GAME OVER                                                *");
                         System.out.println("**************************************************************************************");
-                        System.out.println();
                         finished = true;
+                        retire = 1;
                         stats();
-                        System.out.println();
                         System.out.println("\nWould you like to play again?");
                         playAgain();
                     }
@@ -1373,7 +1382,6 @@ public class Napiat_Game {
                     if (shipShape < 1 && pirateShip < 1) {
                         System.out.println("\n*You won the battle...barely.                                                        *");
                         System.out.println("**************************************************************************************");
-                        System.out.println();
                         shipShape = 2;
                         subGal = 0;
                         galaxy2();
@@ -1407,6 +1415,7 @@ public class Napiat_Game {
                         System.out.println("*Your ship has been sunk....GAME OVER                                                *");
                         System.out.println("**************************************************************************************");
                         finished = true;
+                        retire = 1;
                         stats();
                         System.out.println("\nWould you like to play again?");
                         playAgain();
@@ -2114,7 +2123,9 @@ public class Napiat_Game {
             level = 11;
         }
         System.out.println("RANK: " + rank);
-        System.out.println("\nWhat would you like to do?");
+        if(retire == 0){
+            System.out.println("\nWhat would you like to do?");
+        }
     }
 
     private static void playAgain() {
@@ -2154,8 +2165,7 @@ public class Napiat_Game {
         System.out.println("     (2)       (3)     ");
         System.out.println("(5)  ..............  (4)");
         System.out.println("   ....   (6)  ....    ");
-        System.out.println();
-        System.out.println("          (7)          ");
+        System.out.println("\n          (7)          ");
         System.out.println("\nWhat would you like to do?");
     }
 
