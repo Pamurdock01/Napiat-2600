@@ -1,5 +1,5 @@
 # Napiat-2600
-A fun trading game where you are in command of an military intergalactic cargo ship in the year 2600, and hope to become a 4 star Napiat general!
+A fun trading game where you are in command of an intergalactic military cargo ship in the year 2600, and hope to become a 4 star Napiat general!
 
 To play the game, click on the Napiat_Game class and run the main method!
 
